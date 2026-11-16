@@ -7,3 +7,16 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
+    depends_on:
+      - db
+  db:
+    image: postgres:16
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      # - 'POSTGRES_HOST_AUTH_METHOD=trust'
+      POSTGRES_DB: profpy
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+volumes:
+  postgres_data:

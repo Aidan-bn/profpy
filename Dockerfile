@@ -1,12 +1,12 @@
 # pull base image
-FROM python:3.16-rc-slim
+FROM python:3.12-slim
 
 # Set environment variables
-ENV PIP_DISABLE_PIP_VERSION_CHECK 1 
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1 
 # disables an automatic check for pip updates each time
-ENV PYTHONDONTWRITEBYTECODE 1  
+ENV PYTHONDONTWRITEBYTECODE=1  
 # Python will not try to write .pyc files
-ENV PYTHONUNBUFFERED 1  
+ENV PYTHONUNBUFFERED=1  
 # ensures our console output is not buffered by Docker
 
 # Set work directory
